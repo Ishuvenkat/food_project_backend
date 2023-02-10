@@ -1,0 +1,15 @@
+package service;
+
+import org.springframework.stereotype.Service;
+
+
+
+import dto.dtoclass;
+import response.responseclass;
+
+@Service
+
+public interface serviceinterface {
+	responseclass register(dtoclass registerDto); 
+
+}
