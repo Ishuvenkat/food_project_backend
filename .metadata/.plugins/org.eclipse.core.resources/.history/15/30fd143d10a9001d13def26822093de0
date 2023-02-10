@@ -1,0 +1,9 @@
+package com.example.demo.service;
+
+import com.example.demo.dto.dtoclass;
+
+public interface serviceinterface {
+	
+	Response register (dtoclass registerDto);
+
+}

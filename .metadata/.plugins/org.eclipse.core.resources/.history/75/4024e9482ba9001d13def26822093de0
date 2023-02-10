@@ -1,0 +1,28 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.dto.dtoclass;
+import com.example.demo.entity.entityclass;
+import com.example.demo.repository.Repoclass;
+import com.example.demo.response.responseclass;
+
+@Service
+public class serviceimplementsclass{
+	@Autowired
+	Repoclass repo;
+	
+	public void register(dtoclass registerDto) {
+		
+		entityclass entity = new entityclass();
+		entity.setFirstname(registerDto.getFirstname());
+		entity.setLastname(registerDto.getLastname());
+		entity.setEmail(registerDto.getEmail());
+		entity.setPassword(registerDto.getPassword());
+		entity.setAddress(registerDto.getAddress());
+		repo.save(entity);
+	}
+
+
+}
