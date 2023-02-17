@@ -10,14 +10,14 @@ import com.example.demo.response.responseclass;
 
 @Service
 
-public class serviceimplement  {
+public class serviceimplement implements serviceinterface {
 	
 	@Autowired
 	repo repo;
 	
 	
-	
-	public void register(dtoclass registerDto)
+	@Override
+	public responseclass register(dtoclass registerDto)
 	{
 		entityclass entity = new entityclass();
 		entity.setFirstname(registerDto.getFirstname());
@@ -26,6 +26,15 @@ public class serviceimplement  {
 		entity.setPassword(registerDto.getPassword());
 		entity.setAddress(registerDto.getAddress());
 		repo.save(entity);
+		
+		
+		
+		
+	responseclass responseclass= new responseclass();
+	responseclass.setStatus(200);
+	responseclass.setMessage("data saved successfully to DB");
+	
+		return responseclass;
 		
 	}
 
