@@ -2,7 +2,7 @@ package com.example.demo.dto;
 
 import java.security.PrivateKey;
 
-public class dtoclass {
+public class DtoClass {
 	
 	
 	private String firstname;
@@ -40,7 +40,7 @@ public class dtoclass {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public dtoclass() {}
+	public DtoClass() {}
 	
 	
 	

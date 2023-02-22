@@ -3,23 +3,23 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dto.dtoclass;
-import com.example.demo.entity.entityclass;
+import com.example.demo.dto.DtoClass;
+import com.example.demo.entity.EntityClass;
 import com.example.demo.repository.repo;
 import com.example.demo.response.responseclass;
 
 @Service
 
-public class serviceimplement implements serviceinterface {
+public class ServiceImplement implements ServiceInterface {
 	
 	@Autowired
 	repo repo;
 	
 	
 	@Override
-	public responseclass register(dtoclass registerDto)
+	public responseclass register(DtoClass registerDto)
 	{
-		entityclass entity = new entityclass();
+		EntityClass entity = new EntityClass();
 		entity.setFirstname(registerDto.getFirstname());
 		entity.setLastname(registerDto.getLastname());
 		entity.setEmail(registerDto.getEmail());

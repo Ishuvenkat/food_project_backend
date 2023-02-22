@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "customer1")
 
 
-public class entityclass {
+public class EntityClass {
 	
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
@@ -72,7 +72,7 @@ public void setAddress(String address) {
 
 
 
-public entityclass() {
+public EntityClass() {
 }
 
 
