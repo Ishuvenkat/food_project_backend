@@ -1,10 +1,12 @@
+ 
+
 package com.example.demo.service;
 
-import com.example.demo.dto.Dtoclass;
-import com.example.demo.response.Responseclass;
+import com.example.demo.dto.DtoClass;
+import com.example.demo.response.ResponseClass;
 
-public interface Serviceinterface {
+public interface ServiceInterface {
 	
-	Responseclass register(Dtoclass registerDto);
+	ResponseClass register(DtoClass registerDto);
 
 }

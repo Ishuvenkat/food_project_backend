@@ -5,25 +5,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.springframework.data.relational.core.mapping.Table;
+
+
 @Entity
-@Table(name = "customers")
-public class Entityclass {
+@Table(name = "customer1")
+public class EntityClass {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name  = "id")
 	private int id;
+	
 
 	@Column(name = "firstname")
 	private String firstname;
 	
 	@Column(name = "lastname")
 	private String lastname;
-
+	
 	@Column(name = "email")
 	private String email;
-
+	 
 	@Column(name = "password")
 	private String password;
 	
@@ -32,6 +35,20 @@ public class Entityclass {
 
 	public int getId() {
 		return id;
+	}
+
+	public EntityClass(int id, String firstname, String lastname, String email, String password, String address) {
+		
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+		this.address = address;
+	}
+
+	public EntityClass() {
+		
 	}
 
 	public void setId(int id) {
@@ -77,9 +94,5 @@ public class Entityclass {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	public Entityclass() {
-	}
-
-
 }
+	

@@ -7,20 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.example.demo.dto.Dtoclass;
-import com.example.demo.response.Responseclass;
-import com.example.demo.service.Serviceinterface;
+import com.example.demo.dto.DtoClass;
+import com.example.demo.response.ResponseClass;
+import com.example.demo.service.ServiceInterface;
 
 @RestController
 @RequestMapping("/home")
-public class Controllerclass {
+public class ControllerClass {
 	
 	@Autowired
-	Serviceinterface registerService;
+	ServiceInterface registerService;
 	
 	
 	@PostMapping("/login")
-	public Responseclass register(@RequestBody  Dtoclass registerDto) {
+	public ResponseClass register(@RequestBody  DtoClass registerDto) {
 		 return registerService.register(registerDto);
 	
 

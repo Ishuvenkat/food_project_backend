@@ -1,28 +1,42 @@
 package com.example.demo.service;
 
-import javax.persistence.Entity;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dto.Dtoclass;
-import com.example.demo.entity.Entityclass;
-import com.example.demo.repository.Repointerface;
-import com.example.demo.response.Responseclass;
-@Entity
+import com.example.demo.dto.DtoClass;
+import com.example.demo.entity.EntityClass;
+import com.example.demo.repository.RepoClass;
+import com.example.demo.response.ResponseClass;
+
+
 @Service
-public class Serviceimplementsclass{
-	@Autowired
-	Repointerface repo;
+public class ServiceImplementsClass implements ServiceInterface{
 	
-	public void register(Dtoclass registerDto) {
-		
-		Entityclass entity = new Entityclass();
-		entity.setFirstname(registerDto.getFirstname());
-		entity.setLastname(registerDto.getLastname());
-		entity.setEmail(registerDto.getEmail());
-		entity.setPassword(registerDto.getPassword());
-		entity.setAddress(registerDto.getAddress());
-		Repointerface.save(entity);
+	@Autowired
+	RepoClass repo;
+
+
+	@Override
+	public ResponseClass register(DtoClass registerDto) {
+
+		EntityClass entity = repo.findByEmail(registerDto.getEmail());
+		ResponseClass responseclass= new ResponseClass();
+
+		if(entity.getPassword().equals(registerDto.getPassword())) {
+			responseclass.setMessage("login successful");
+			responseclass.setStatus(200);
+		}
+		else {
+			responseclass.setMessage("password doesn't match");
+			responseclass.setStatus(202);
+
+		}
+
+
+		return responseclass;
+
+
 	}
 }
