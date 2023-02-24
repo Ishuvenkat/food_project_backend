@@ -1,0 +1,56 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.dto.DtoClass;
+import com.example.demo.entity.EntityClass;
+import com.example.demo.exceptio.commonException;
+import com.example.demo.repository.Repo;
+import com.example.demo.response.ResponseClass;
+
+@Service
+
+public class ServiceImplement implements ServiceInterface {
+	
+	@Autowired
+	Repo Repo;
+	
+	
+	@Override
+	public ResponseClass register(DtoClass registerDto)
+	{
+		
+	//	validate(registerDto);
+		
+		EntityClass entity = new EntityClass();
+		entity.setFirstname(registerDto.getFirstname());
+		entity.setLastname(registerDto.getLastname());
+		entity.setEmail(registerDto.getEmail());
+		entity.setPassword(registerDto.getPassword());
+		entity.setAddress(registerDto.getAddress());
+		Repo.save(entity);
+		
+		
+		
+		
+	ResponseClass ResponseClass= new ResponseClass();
+	ResponseClass.setStatus(200);
+	ResponseClass.setMessage("data saved successfully to DB");
+	
+		return ResponseClass;
+		
+	}
+	
+	
+public void validate(DtoClass registerDto)
+{
+if(registerDto.getEmail()==null)	
+{
+	throw new commonException(200, "Email is Empty");
+}
+}
+
+
+
+}

@@ -1,0 +1,5 @@
+package com.example.demo.exceptio;
+
+public class commonException {
+
+}

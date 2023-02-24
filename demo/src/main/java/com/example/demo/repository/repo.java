@@ -8,6 +8,6 @@ import com.example.demo.entity.EntityClass;
 @Repository
 
 
-public interface repo extends JpaRepository<EntityClass, Integer> {
+public interface Repo extends JpaRepository<EntityClass, Integer> {
 
 }

@@ -3,3 +3,5 @@
 1677067098298	Rename type 'entityclass'
 1677067315362	Rename type 'serviceimplement'
 1677067337201	Rename type 'serviceinterface'
+1677229706527	Rename type 'responseclass'
+1677229723806	Rename type 'repo'

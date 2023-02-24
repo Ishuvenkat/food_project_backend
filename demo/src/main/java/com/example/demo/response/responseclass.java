@@ -3,7 +3,7 @@ package com.example.demo.response;
 
 
 
-public class responseclass {
+public class ResponseClass {
 	private int status;
 	private String message;
 	public int getStatus() {
