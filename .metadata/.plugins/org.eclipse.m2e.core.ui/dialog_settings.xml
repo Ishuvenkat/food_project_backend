@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Jyoshna\Desktop\mainproject\demo"/>
+			<item value="demo"/>
 			<item value="C:\Users\Jyoshna\Downloads\Nisgra"/>
 		</list>
 		<list key="projectNameTemplate">
